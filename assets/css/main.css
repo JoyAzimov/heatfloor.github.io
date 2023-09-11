@@ -4710,7 +4710,7 @@ input, select, textarea {
 
 #overflow{ /*Скрывает все, что находится за пределами этого блока*/
 	width: 100%;
-	overflow: hidden;
+	overflow: visible;
 }
 
 #article img{ /*Размер изображения*/
@@ -4728,7 +4728,8 @@ input, select, textarea {
 #switch3:checked ~ #controls label:nth-child(2),
 #switch4:checked ~ #controls label:nth-child(3),
 #switch5:checked ~ #controls label:nth-child(4){
-	background: url('../../images/Slider/arrow-left.png') no-repeat;
+	background-color: #fd800c;
+	clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 	float: left;
 	margin: 0 0 0 -84px; /*Сдвиг влево*/
 	display: block;
@@ -4741,7 +4742,8 @@ input, select, textarea {
 #switch3:checked ~ #controls label:nth-child(4),
 #switch4:checked ~ #controls label:nth-child(5),
 #switch5:checked ~ #controls label:nth-child(1){
-	background: url('../../images/Slider/arrow-right.png') no-repeat;
+	background-color: #fd800c;
+	clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 	float: right;
 	margin: 0 -84px 0 0 ; /*Сдвиг вправо*/
 	display: block;
@@ -4776,22 +4778,13 @@ label, a{
 	margin-left: -1030%;
 }
 
-#switch6:checked ~ #slides .image{
-	margin-left: -1270%;
-}
-
-#switch7:checked ~ #slides .image{
-	margin-left: -1510%;
-}
-
-#switch8:checked ~ #slides .image{
-	margin-left: -1750%;
-}
-
 #controls{
+	display: block;
 	margin: -25% 0 0 0;
 	width: 100%;
 	height: 50px;
+	z-index: 10003;
+    position: relative; 
 }
 
 #active label{ /*Стиль отдельного переключателя*/
